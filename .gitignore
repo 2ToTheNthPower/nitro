@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# RocketSim collision meshes (downloaded during tests)
+collision_meshes/
+collision_meshes.zip

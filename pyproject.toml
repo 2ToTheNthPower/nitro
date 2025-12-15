@@ -1,17 +1,29 @@
 [project]
 name = "nitro-sim"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python bindings for RocketSim - Rocket League physics simulation"
 readme = "README.md"
 authors = [
     { name = "Aaron Davis", email = "52721338+2ToTheNthPower@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "gymnasium>=1.2.2",
+    "numpy>=2.3.5",
+]
 
-[project.scripts]
-nitro-sim = "nitro_sim:main"
+[project.optional-dependencies]
+test = ["pytest>=7.0.0"]
 
 [build-system]
-requires = ["uv_build>=0.9.16,<0.10.0"]
-build-backend = "uv_build"
+requires = ["scikit-build-core>=0.8", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[tool.scikit-build]
+cmake.version = ">=3.15"
+cmake.build-type = "Release"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
