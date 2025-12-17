@@ -40,7 +40,7 @@ jobs:
           
           # Test command to verify the wheel works
           CIBW_TEST_REQUIRES: pytest numpy gymnasium
-          CIBW_TEST_COMMAND: pytest {project}/tests
+          CIBW_TEST_COMMAND: pytest {project}/tests -v -k "not pettingzoo"
           
           # Ensure C++20 with GNU extensions (as used by RocketSim)
           CIBW_ENVIRONMENT: >

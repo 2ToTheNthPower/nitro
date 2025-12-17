@@ -8,6 +8,17 @@ set(CMAKE_CXX_EXTENSIONS ON)
 # Build RocketSim library
 add_subdirectory(RocketSim)
 
+# RocketSim needs to be compiled as position-independent code for shared library
+set_target_properties(RocketSim PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
+# Add compiler flags to RocketSim for constexpr compatibility
+# Clang: suppress warning, GCC: use permissive mode for constexpr
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(RocketSim PRIVATE -Wno-invalid-constexpr)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(RocketSim PRIVATE -fpermissive)
+endif()
+
 # Find Python and pybind11
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(pybind11 CONFIG REQUIRED)
