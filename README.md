@@ -69,15 +69,15 @@ env.close()
 
 ## Features
 
-✅ **Complete RocketSim API** - All major types and functions exposed  
-✅ **PettingZoo API** - Multi-agent RL compatible interface  
-✅ **Ball Prediction** - Predict ball trajectories for AI/bots  
-✅ **Event Tracking** - Detect shots, goals, saves, and assists  
-✅ **Callbacks** - React to goals, bumps, and game events  
-✅ **Type hints** - Full LSP/autocomplete support with `.pyi` stubs  
-✅ **Pythonic** - Snake_case naming, properties, and operators  
-✅ **Fast** - Direct C++ bindings with minimal overhead  
-✅ **Tested** - 85 passing tests covering all functionality  
+- **Complete RocketSim API** - All major types and functions exposed  
+- **PettingZoo API** - Multi-agent RL compatible interface  
+- **Ball Prediction** - Predict ball trajectories for AI/bots  
+- **Event Tracking** - Detect shots, goals, saves, and assists  
+- **Callbacks** - React to goals, bumps, and game events  
+- **Type hints** - Full LSP/autocomplete support with `.pyi` stubs  
+- **Pythonic** - Snake_case naming, properties, and operators  
+- **Fast** - Direct C++ bindings with minimal overhead  
+- **Tested** - 85 passing tests covering all functionality  
 
 ## Examples
 
