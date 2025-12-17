@@ -31,8 +31,9 @@ jobs:
           # Skip 32-bit builds and musllinux for now
           CIBW_SKIP: "*-win32 *-manylinux_i686 *-musllinux_*"
           
-          # Use manylinux2014 for better compatibility
-          CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
+          # Use manylinux_2_28 for GCC 11+ (required for C++20)
+          CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28
+          CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
           
           # Install build dependencies
           CIBW_BEFORE_BUILD: pip install scikit-build-core pybind11
@@ -41,14 +42,18 @@ jobs:
           CIBW_TEST_REQUIRES: pytest numpy gymnasium
           CIBW_TEST_COMMAND: pytest {project}/tests
           
-          # Ensure C++20 support
+          # Ensure C++20 support with proper compiler flags
           CIBW_ENVIRONMENT: >
             CMAKE_CXX_STANDARD=20
+            CMAKE_CXX_STANDARD_REQUIRED=ON
+            CXXFLAGS="-std=c++20"
           
           # macOS specific settings
           CIBW_ENVIRONMENT_MACOS: >
             MACOSX_DEPLOYMENT_TARGET=10.15
             CMAKE_CXX_STANDARD=20
+            CMAKE_CXX_STANDARD_REQUIRED=ON
+            CXXFLAGS="-std=c++20"
           
           # Repair wheel settings
           CIBW_REPAIR_WHEEL_COMMAND_MACOS: >
