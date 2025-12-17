@@ -10,7 +10,7 @@
 namespace py = pybind11;
 using namespace RocketSim;
 
-PYBIND11_MODULE(nitro_sim, m) {
+PYBIND11_MODULE(nitro, m) {
     m.doc() = "Python bindings for RocketSim - Rocket League physics simulation";
     m.attr("__version__") = RS_VERSION;
 

@@ -5,7 +5,7 @@ import pytest
 
 def test_game_mode_enum():
     """Test GameMode enum values"""
-    import nitro_sim as rs
+    import nitro as rs
 
     assert hasattr(rs.GameMode, "SOCCAR")
     assert hasattr(rs.GameMode, "HOOPS")
@@ -17,7 +17,7 @@ def test_game_mode_enum():
 
 def test_team_enum():
     """Test Team enum values"""
-    import nitro_sim as rs
+    import nitro as rs
 
     assert hasattr(rs.Team, "BLUE")
     assert hasattr(rs.Team, "ORANGE")
@@ -25,7 +25,7 @@ def test_team_enum():
 
 def test_car_controls():
     """Test CarControls initialization and fields"""
-    import nitro_sim as rs
+    import nitro as rs
 
     controls = rs.CarControls()
 
@@ -51,7 +51,7 @@ def test_car_controls():
 
 def test_car_controls_clamp():
     """Test CarControls clamping"""
-    import nitro_sim as rs
+    import nitro as rs
 
     controls = rs.CarControls()
 
@@ -70,7 +70,7 @@ def test_car_controls_clamp():
 
 def test_phys_state():
     """Test PhysState initialization and fields"""
-    import nitro_sim as rs
+    import nitro as rs
 
     state = rs.PhysState()
 
@@ -89,7 +89,7 @@ def test_phys_state():
 
 def test_ball_state():
     """Test BallState (inherits from PhysState)"""
-    import nitro_sim as rs
+    import nitro as rs
 
     state = rs.BallState()
 
@@ -102,7 +102,7 @@ def test_ball_state():
 
 def test_car_state():
     """Test CarState initialization and fields"""
-    import nitro_sim as rs
+    import nitro as rs
 
     state = rs.CarState()
 
@@ -122,7 +122,7 @@ def test_car_state():
 
 def test_car_state_methods():
     """Test CarState methods"""
-    import nitro_sim as rs
+    import nitro as rs
 
     state = rs.CarState()
 
@@ -136,7 +136,7 @@ def test_car_state_methods():
 
 def test_ball_hit_info():
     """Test BallHitInfo"""
-    import nitro_sim as rs
+    import nitro as rs
 
     info = rs.BallHitInfo()
 

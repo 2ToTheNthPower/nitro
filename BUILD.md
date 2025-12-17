@@ -21,7 +21,7 @@ For development, install in editable mode with `uv`:
 uv sync
 
 # The package is now installed and ready to use
-uv run python -c "import nitro_sim as rs; print('Version:', rs.__version__)"
+uv run python -c "import nitro as rs; print('Version:', rs.__version__)"
 ```
 
 ### Option 2: Regular Install
@@ -50,15 +50,15 @@ python -m build
 
 # Wheels will be in dist/
 ls dist/
-# nitro_sim-0.1.0-cp312-cp312-macosx_26_0_arm64.whl
-# nitro_sim-0.1.0.tar.gz
+# nitro-0.1.0-cp312-cp312-macosx_26_0_arm64.whl
+# nitro-0.1.0.tar.gz
 ```
 
 ## Install from Wheel
 
 ```bash
 # Install the built wheel
-pip install dist/nitro_sim-0.1.0-*.whl
+pip install dist/nitro-0.1.0-*.whl
 ```
 
 ## Development Workflow
@@ -77,7 +77,7 @@ uv run pytest tests/
 
 # 5. Or use Python directly
 uv run python
->>> import nitro_sim as rs
+>>> import nitro as rs
 >>> rs.init("collision_meshes")
 >>> arena = rs.Arena.create(rs.GameMode.SOCCAR)
 ```
@@ -158,11 +158,11 @@ uv sync
 
 ```bash
 # Check that the module loads
-uv run python -c "import nitro_sim; print(nitro_sim.__version__)"
+uv run python -c "import nitro; print(nitro.__version__)"
 
 # Check that types work (LSP/autocomplete)
 uv run python -c "
-import nitro_sim as rs
+import nitro as rs
 v = rs.Vec(1, 2, 3)
 print(f'Vector length: {v.length()}')
 "
@@ -208,14 +208,14 @@ The build process:
 1. Compiles RocketSim C++ library (static)
 2. Compiles Python bindings (src/bindings.cpp)
 3. Links everything into a Python extension module
-4. Installs type stubs (nitro_sim.pyi) for IDE support
-5. Creates importable module: `nitro_sim.cpython-312-darwin.so`
+4. Installs type stubs (nitro.pyi) for IDE support
+5. Creates importable module: `nitro.cpython-312-darwin.so`
 
 ## Build Output
 
 After building, you'll have:
-- `nitro_sim.cpython-*.so` (or `.pyd` on Windows) - The compiled extension
-- `nitro_sim.pyi` - Type stubs for autocomplete/type checking
+- `nitro.cpython-*.so` (or `.pyd` on Windows) - The compiled extension
+- `nitro.pyi` - Type stubs for autocomplete/type checking
 - Built wheels in `dist/` (if using `uv build`)
 
 ## Next Steps

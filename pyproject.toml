@@ -1,5 +1,5 @@
 [project]
-name = "nitro-sim"
+name = "nitro"
 version = "0.1.0"
 description = "Python bindings for RocketSim - Rocket League physics simulation"
 readme = "README.md"
@@ -22,6 +22,22 @@ build-backend = "scikit_build_core.build"
 [tool.scikit-build]
 cmake.version = ">=3.15"
 cmake.build-type = "Release"
+wheel.packages = ["src"]
+
+# Include all necessary files in sdist
+sdist.include = [
+    "RocketSim/**",
+    "src/**",
+    "CMakeLists.txt",
+    "README.md",
+    "LICENSE",
+    "BUILD.md",
+]
+sdist.exclude = [
+    ".git*",
+    "**/__pycache__",
+    "**/*.pyc",
+]
 
 [dependency-groups]
 dev = [

@@ -99,7 +99,7 @@ def collision_meshes_path():
 @pytest.fixture(scope="session")
 def initialized_sim(collision_meshes_path):
     """Fixture that initializes RocketSim once for all tests"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Initialize RocketSim
     rs.init(collision_meshes_path, silent=True)

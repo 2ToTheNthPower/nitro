@@ -3,7 +3,7 @@
 from typing import Dict, List, Optional, Any
 import numpy as np
 from gymnasium import spaces
-import nitro_sim as rs
+import nitro as rs
 
 
 class RocketLeagueParallelEnv:

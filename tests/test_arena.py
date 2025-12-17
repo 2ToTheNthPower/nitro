@@ -5,7 +5,7 @@ import pytest
 
 def test_car_config():
     """Test CarConfig and preset configs"""
-    import nitro_sim as rs
+    import nitro as rs
 
     config = rs.CarConfig()
     assert hasattr(config, "hitbox_size")
@@ -22,7 +22,7 @@ def test_car_config():
 
 def test_mutator_config():
     """Test MutatorConfig"""
-    import nitro_sim as rs
+    import nitro as rs
 
     config = rs.MutatorConfig(rs.GameMode.SOCCAR)
 
@@ -42,7 +42,7 @@ def test_mutator_config():
 
 def test_arena_config():
     """Test ArenaConfig"""
-    import nitro_sim as rs
+    import nitro as rs
 
     config = rs.ArenaConfig()
 
@@ -55,7 +55,7 @@ def test_arena_config():
 @pytest.mark.skip(reason="Requires RocketSim initialization with collision meshes")
 def test_arena_creation():
     """Test Arena creation (without initialization)"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Note: This test will likely fail without RocketSim.Init() being called
     # but we're testing the interface is available
@@ -74,7 +74,7 @@ def test_arena_creation():
 
 def test_car_interface():
     """Test Car class interface (without creating real car)"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Just verify the class exists and has the right structure
     assert hasattr(rs, "Car")
@@ -82,7 +82,7 @@ def test_car_interface():
 
 def test_ball_interface():
     """Test Ball class interface"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Just verify the class exists and has the right structure
     assert hasattr(rs, "Ball")
@@ -90,7 +90,7 @@ def test_ball_interface():
 
 def test_initialization_interface():
     """Test initialization function interface"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Test that init function exists
     assert hasattr(rs, "init")
@@ -112,7 +112,7 @@ def test_initialization_interface():
 
 def test_version():
     """Test that version is exposed"""
-    import nitro_sim as rs
+    import nitro as rs
 
     assert hasattr(rs, "__version__")
     assert isinstance(rs.__version__, str)

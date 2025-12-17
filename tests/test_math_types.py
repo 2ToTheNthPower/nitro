@@ -6,7 +6,7 @@ import math
 
 def test_vec_construction():
     """Test Vec construction and basic properties"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Default constructor
     v1 = rs.Vec()
@@ -21,7 +21,7 @@ def test_vec_construction():
 
 def test_vec_operations():
     """Test Vec mathematical operations"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v1 = rs.Vec(1, 2, 3)
     v2 = rs.Vec(4, 5, 6)
@@ -49,7 +49,7 @@ def test_vec_operations():
 
 def test_vec_length():
     """Test Vec length calculations"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v = rs.Vec(3, 4, 0)
     assert v.length() == 5.0
@@ -63,7 +63,7 @@ def test_vec_length():
 
 def test_vec_dot_cross():
     """Test Vec dot and cross products"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v1 = rs.Vec(1, 0, 0)
     v2 = rs.Vec(0, 1, 0)
@@ -78,7 +78,7 @@ def test_vec_dot_cross():
 
 def test_vec_normalized():
     """Test Vec normalization"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v = rs.Vec(3, 4, 0)
     vn = v.normalized()
@@ -89,7 +89,7 @@ def test_vec_normalized():
 
 def test_vec_distance():
     """Test Vec distance calculations"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v1 = rs.Vec(0, 0, 0)
     v2 = rs.Vec(3, 4, 0)
@@ -102,7 +102,7 @@ def test_vec_distance():
 
 def test_vec_indexing():
     """Test Vec indexing"""
-    import nitro_sim as rs
+    import nitro as rs
 
     v = rs.Vec(1, 2, 3)
     assert v[0] == 1
@@ -115,7 +115,7 @@ def test_vec_indexing():
 
 def test_rotmat_construction():
     """Test RotMat construction"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Default constructor
     r1 = rs.RotMat()
@@ -130,7 +130,7 @@ def test_rotmat_construction():
 
 def test_rotmat_look_at():
     """Test RotMat look_at function"""
-    import nitro_sim as rs
+    import nitro as rs
 
     forward = rs.Vec(1, 0, 0)
     up = rs.Vec(0, 0, 1)
@@ -141,7 +141,7 @@ def test_rotmat_look_at():
 
 def test_angle_construction():
     """Test Angle construction"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Default constructor
     a1 = rs.Angle()
@@ -156,7 +156,7 @@ def test_angle_construction():
 
 def test_angle_conversion():
     """Test Angle to/from RotMat conversion"""
-    import nitro_sim as rs
+    import nitro as rs
 
     a = rs.Angle(0.0, 0.0, 0.0)
     r = a.to_rot_mat()
@@ -170,7 +170,7 @@ def test_angle_conversion():
 
 def test_angle_forward_vec():
     """Test Angle forward vector"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Looking forward (0 yaw, 0 pitch)
     a = rs.Angle(0, 0, 0)
@@ -181,7 +181,7 @@ def test_angle_forward_vec():
 
 def test_angle_normalize():
     """Test Angle normalization"""
-    import nitro_sim as rs
+    import nitro as rs
 
     # Test angle wrapping
     a = rs.Angle(2 * math.pi + 0.5, 0, 0)
@@ -191,7 +191,7 @@ def test_angle_normalize():
 
 def test_angle_indexing():
     """Test Angle indexing"""
-    import nitro_sim as rs
+    import nitro as rs
 
     a = rs.Angle(1, 2, 3)
     assert a[0] == 1  # yaw

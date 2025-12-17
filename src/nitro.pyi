@@ -1,4 +1,4 @@
-"""Type stubs for nitro_sim - RocketSim Python bindings"""
+"""Type stubs for nitro - RocketSim Python bindings"""
 
 from typing import List, Optional, Callable, Tuple
 from enum import IntEnum

@@ -1,6 +1,6 @@
 """Advanced example using ball prediction, event tracking, and callbacks"""
 
-import nitro_sim as rs
+import nitro as rs
 
 
 def main():

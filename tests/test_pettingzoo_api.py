@@ -121,7 +121,7 @@ def test_multiple_steps():
 def test_goal_termination():
     """Test that scoring a goal terminates episode"""
     from pettingzoo_env import parallel_env
-    import nitro_sim as rs
+    import nitro as rs
 
     env = parallel_env(num_blue=1, num_orange=1)
     env.reset()
@@ -198,7 +198,7 @@ def test_3v3_game():
 def test_different_game_modes():
     """Test different game modes"""
     from pettingzoo_env import parallel_env
-    import nitro_sim as rs
+    import nitro as rs
 
     for game_mode in [rs.GameMode.SOCCAR, rs.GameMode.HOOPS]:
         env = parallel_env(num_blue=1, num_orange=1, game_mode=game_mode)

@@ -1,6 +1,6 @@
 """Test file to demonstrate LSP autocomplete support"""
 
-import nitro_sim as rs
+import nitro as rs
 
 # Create a vector - you should get autocomplete for x, y, z
 v = rs.Vec(1, 2, 3)

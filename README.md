@@ -9,7 +9,7 @@ Python bindings for [RocketSim](https://github.com/ZealanL/RocketSim) - High-per
 uv sync
 
 # Verify installation
-uv run python -c "import nitro_sim as rs; print('Version:', rs.__version__)"
+uv run python -c "import nitro as rs; print('Version:', rs.__version__)"
 
 # Run tests
 uv run pytest tests/
@@ -20,7 +20,7 @@ uv run pytest tests/
 ### Direct API
 
 ```python
-import nitro_sim as rs
+import nitro as rs
 
 # Initialize RocketSim
 rs.init("collision_meshes")
