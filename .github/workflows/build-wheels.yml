@@ -42,11 +42,10 @@ jobs:
           CIBW_TEST_REQUIRES: pytest numpy gymnasium
           CIBW_TEST_COMMAND: pytest {project}/tests
           
-          # Ensure C++20 support with proper compiler flags
+          # Ensure C++20 with GNU extensions (as used by RocketSim)
           CIBW_ENVIRONMENT: >
             CMAKE_CXX_STANDARD=20
-            CMAKE_CXX_STANDARD_REQUIRED=ON
-            CXXFLAGS="-std=c++20"
+            CMAKE_CXX_EXTENSIONS=ON
           
           # macOS specific settings
           CIBW_ENVIRONMENT_MACOS: >

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(nitro)
 
-# Set C++ standard
+# Set C++ standard (allow GNU extensions for RocketSim compatibility)
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
 
 # Build RocketSim library
 add_subdirectory(RocketSim)
