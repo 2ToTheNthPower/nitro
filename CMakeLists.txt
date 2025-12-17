@@ -12,11 +12,12 @@ add_subdirectory(RocketSim)
 set_target_properties(RocketSim PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 # Add compiler flags to RocketSim for constexpr compatibility
-# Clang: suppress warning, GCC: use permissive mode for constexpr
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    # Clang: suppress invalid constexpr warning
     target_compile_options(RocketSim PRIVATE -Wno-invalid-constexpr)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(RocketSim PRIVATE -fpermissive)
+    # GCC: Use C++23 mode where constexpr with reinterpret_cast is allowed (P2280R4)
+    target_compile_options(RocketSim PRIVATE -std=gnu++23)
 endif()
 
 # Find Python and pybind11
