@@ -1,5 +1,5 @@
 [project]
-name = "nitro"
+name = "nitro-sim"
 version = "0.1.0"
 description = "Python bindings for RocketSim - Rocket League physics simulation"
 readme = "README.md"
