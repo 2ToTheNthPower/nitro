@@ -120,9 +120,9 @@ jobs:
 
     steps:
     - name: Download all the dists
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v4
       with:
-        name: python-package-distributions
-        path: dist/
+        path: dist
+        merge-multiple: true
     - name: Publish distribution 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
